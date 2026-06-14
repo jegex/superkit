@@ -2,6 +2,16 @@
 
 All notable changes to Superkit will be documented in this file.
 
+## v1.0.4 - 2026-06-14
+
+### Added
+
+- **Maintenance Mode** — `CheckForMaintenance` middleware + 503 view. Toggle from Settings → General → Maintenance Mode real-time applies to frontend, preserves admin panel and Livewire access.
+
+### Fixed
+
+- **CheckForMaintenance middleware** — Exclude `livewire*` routes so admin panel Livewire interactions work during maintenance
+
 ## v1.0.3 - 2026-06-14
 
 ### Fixed
