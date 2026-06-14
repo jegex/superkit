@@ -86,6 +86,12 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
+            ->navigationGroups([
+                'Blog',
+                'Appearance',
+                'Settings',
+                'System',
+            ])
             ->plugins([
                 FilamentLogViewer::make()
                     ->authorize(fn (): bool => auth()->user()?->can('View:LogTable') ?? false),
