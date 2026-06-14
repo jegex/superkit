@@ -69,15 +69,19 @@ class SuperkitSetupCommand extends Command
         $this->updateEnv('APP_NAME', "\"{$appName}\"");
         $this->updateEnv('APP_URL', $appUrl);
 
-        if (confirm(label: 'Run database migrations?', default: true)) {
+        $migrated = confirm(label: 'Run database migrations?', default: true);
+
+        if ($migrated) {
             $this->call('migrate', ['--force' => true]);
         }
 
-        $this->call('db:seed', ['--class' => LocaleSeeder::class, '--force' => true]);
+        if ($migrated) {
+            $this->call('db:seed', ['--class' => LocaleSeeder::class, '--force' => true]);
+        }
 
-        if (! User::whereEmail($adminEmail)->exists()) {
+        if ($migrated && ! User::whereEmail($adminEmail)->exists()) {
             $user = User::updateOrCreate([
-                'email' => $adminEmail
+                'email' => $adminEmail,
             ], [
                 'username' => 'admin',
                 'firstname' => 'Admin',
@@ -86,13 +90,13 @@ class SuperkitSetupCommand extends Command
                 'timezone' => 'UTC',
             ]);
 
-            $this->call('shield:install', ['--no-interaction' => true]);
+            $this->call('shield:install', ['panel' => 'admin', '--no-interaction' => true]);
             $this->call('shield:generate', ['--all' => true, '--no-interaction' => true, '--panel' => 'admin']);
             $this->call('shield:seeder', ['--generate' => true, '--option' => 'permissions_via_roles', '--no-interaction' => true]);
             $this->call('shield:super-admin', ['--user' => $user->id, '--panel' => 'admin', '--no-interaction' => true]);
         }
 
-        if (confirm(label: 'Seed demo data (blog posts, categories, pages)?', default: true)) {
+        if ($migrated && confirm(label: 'Seed demo data (blog posts, categories, pages)?', default: true)) {
             $this->call('db:seed', ['--class' => DemoSeeder::class, '--force' => true]);
         }
 
