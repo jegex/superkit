@@ -92,7 +92,7 @@ class SuperkitSetupCommand extends Command
 
             $this->call('shield:install', ['panel' => 'admin', '--no-interaction' => true]);
             $this->call('shield:generate', ['--all' => true, '--no-interaction' => true, '--panel' => 'admin']);
-            $this->call('shield:seeder', ['--generate' => true, '--option' => 'permissions_via_roles', '--no-interaction' => true]);
+            $this->call('shield:seeder', ['--option' => 'permissions_via_roles', '--no-interaction' => true]);
             $this->call('shield:super-admin', ['--user' => $user->id, '--panel' => 'admin', '--no-interaction' => true]);
         }
 

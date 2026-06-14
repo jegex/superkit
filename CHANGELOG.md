@@ -2,6 +2,12 @@
 
 All notable changes to Superkit will be documented in this file.
 
+## v1.0.2 - 2026-06-14
+
+### Fixed
+
+- **SuperkitSetupCommand** — Remove `--generate` flag from `shield:seeder` call to prevent `NonInteractiveValidationException` caused by internal `shield:generate` call missing `--panel` option
+
 ## v1.0.1 - 2026-06-14
 
 ### Fixed
