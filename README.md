@@ -1,17 +1,13 @@
-<div align="center">
-  <h1>Superkit</h1>
-  [![PHP](https://img.shields.io/badge/PHP-8.4-777BB4?style=flat-square&logo=php)](https://php.net)
-  [![Laravel](https://img.shields.io/badge/Laravel-13-FF2D20?style=flat-square&logo=laravel)](https://laravel.com)
-  [![Filament](https://img.shields.io/badge/Filament-5-FDAC4F?style=flat-square&logo=filament)](https://filamentphp.com)
-  [![Livewire](https://img.shields.io/badge/Livewire-4-FB70A9?style=flat-square&logo=livewire)](https://livewire.laravel.com)
-  [![Pest](https://img.shields.io/badge/Pest-4-CB4E24?style=flat-square&logo=pest)](https://pestphp.com)
-  [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat-square&logo=tailwindcss)](https://tailwindcss.com)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-</div>
+# Superkit
+[![PHP](https://img.shields.io/badge/PHP-8.4-777BB4?style=flat-square&logo=php)](https://php.net)
+[![Laravel](https://img.shields.io/badge/Laravel-13-FF2D20?style=flat-square&logo=laravel)](https://laravel.com)
+[![Filament](https://img.shields.io/badge/Filament-5-FDAC4F?style=flat-square&logo=filament)](https://filamentphp.com)
+[![Livewire](https://img.shields.io/badge/Livewire-4-FB70A9?style=flat-square&logo=livewire)](https://livewire.laravel.com)
+[![Pest](https://img.shields.io/badge/Pest-4-CB4E24?style=flat-square&logo=pest)](https://pestphp.com)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat-square&logo=tailwindcss)](https://tailwindcss.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
-<p align="center">
-  <strong>Laravel 13 + Filament 5 starter kit</strong> with built-in CMS, multi-language support, role management, media library, scheduled publishing, and more.
-</p>
+**Laravel 13 + Filament 5 starter kit** with built-in CMS, multi-language support, role management, media library, scheduled publishing, and more.
 
 ---
 
