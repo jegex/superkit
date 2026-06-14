@@ -87,10 +87,13 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
             ->plugins([
-                FilamentLogViewer::make(),
-                FilamentSpatieLaravelBackupPlugin::make(),
+                FilamentLogViewer::make()
+                    ->authorize(fn (): bool => auth()->user()?->can('View:LogTable') ?? false),
+                FilamentSpatieLaravelBackupPlugin::make()
+                    ->authorize(fn (): bool => auth()->user()?->can('View:Backups') ?? false),
                 FilamentSpatieLaravelHealthPlugin::make()
-                    ->usingPage(HealthCheckResults::class),
+                    ->usingPage(HealthCheckResults::class)
+                    ->authorize(fn (): bool => auth()->user()?->can('View:HealthCheckResults') ?? false),
                 SpatieTranslatablePlugin::make()
                     ->defaultLocales(app(MultiLanguageService::class)->getSupportedLocales())
                     ->persist(),
