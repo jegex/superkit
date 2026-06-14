@@ -79,7 +79,7 @@ class SuperkitSetupCommand extends Command
             $this->call('db:seed', ['--class' => LocaleSeeder::class, '--force' => true]);
         }
 
-        if ($migrated && ! User::whereEmail($adminEmail)->exists()) {
+        if ($migrated) {
             $user = User::updateOrCreate([
                 'email' => $adminEmail,
             ], [
