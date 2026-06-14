@@ -2,6 +2,12 @@
 
 All notable changes to Superkit will be documented in this file.
 
+## v1.0.3 - 2026-06-14
+
+### Fixed
+
+- **AdminPanelProvider** — Protect HealthCheckResults, Backups, and LogTable pages with Shield authorization via `authorize()` callbacks; users without the corresponding `View:*` permission can no longer access these pages
+
 ## v1.0.2 - 2026-06-14
 
 ### Fixed
