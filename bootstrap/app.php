@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\CheckForMaintenance;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -25,6 +26,8 @@ return Application::configure(basePath: dirname(__DIR__))
             'localeCookieRedirect' => LocaleCookieRedirect::class,
             'localeViewPath' => LaravelLocalizationViewPath::class,
         ]);
+
+        $middleware->prependToGroup('web', CheckForMaintenance::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(
