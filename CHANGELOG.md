@@ -2,6 +2,12 @@
 
 All notable changes to Superkit will be documented in this file.
 
+## v1.0.1 - 2026-06-14
+
+### Fixed
+
+- **SuperkitSetupCommand** — Shield commands (install, generate, seeder, super-admin) now run every time setup is executed, fixing empty roles/permissions when user already exists
+
 ## v1.0.0 - 2026-06-14
 
 Initial release of Superkit — a Laravel 13 + Filament 5 starter kit.
