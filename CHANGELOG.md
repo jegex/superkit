@@ -2,6 +2,12 @@
 
 All notable changes to Superkit will be documented in this file.
 
+## v1.0.5 - 2026-06-14
+
+### Changed
+
+- **UserResource** — Added `navigationGroup: 'System'` so it appears under the System group in sidebar
+
 ## v1.0.4 - 2026-06-14
 
 ### Added
